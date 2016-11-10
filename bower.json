@@ -4,8 +4,8 @@
   "homepage": "https://github.com/doshprompt/angular-localization",
   "description": "modded version of angularjs localization done right",
   "main": [
-    "dist/angular-localization.js",
-    "dist/angular-localization.css"
+    "dist/angular-localization-carnid-mod.js",
+    "dist/angular-localization-carnid-mod.css"
   ],
   "keywords": [
     "angularjs",

@@ -3,8 +3,8 @@
   "version": "1.5.1",
   "description": "modded version of angularjs localization done right.",
   "main": [
-    "dist/angular-localization.js",
-    "dist/angular-localization.css"
+    "dist/angular-localization-carnid-mod.js",
+    "dist/angular-localization-carnid-mod.css"
   ],
   "scripts": {
     "postinstall": "bower install",
