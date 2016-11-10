@@ -1,7 +1,7 @@
 {
-  "name": "angular-localization",
+  "name": "angular-localization-carnid-mod",
   "version": "1.5.1",
-  "description": "angularjs localization done right.",
+  "description": "modded version of angularjs localization done right.",
   "main": [
     "dist/angular-localization.js",
     "dist/angular-localization.css"
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/doshprompt/angular-localization.git"
+    "url": "https://github.com/carnid/angular-localization.git"
   },
   "keywords": [
     "angularjs"
@@ -20,7 +20,7 @@
   "author": "Rahul Doshi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/doshprompt/angular-localization/issues"
+    "url": "https://github.com/carnid/angular-localization/issues"
   },
   "homepage": "http://doshprompt.github.io/angular-localization",
   "devDependencies": {
