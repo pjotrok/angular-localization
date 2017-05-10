@@ -1,11 +1,11 @@
 {
-  "name": "angular-localization-carnid-mod",
-  "version": "1.5.1",
-  "homepage": "https://github.com/doshprompt/angular-localization",
+  "name": "angular-localization-spiria",
+  "version": "1.6.0",
+  "homepage": "https://github.com/Spiria-Digital/angular-localization.git",
   "description": "modded version of angularjs localization done right",
   "main": [
-    "dist/angular-localization-carnid-mod.js",
-    "dist/angular-localization-carnid-mod.css"
+    "dist/angular-localization-spiria.js",
+    "dist/angular-localization-spiria.css"
   ],
   "keywords": [
     "angularjs",

@@ -1,8 +1,10 @@
 # angular-localization 
 
-*AngularJS Localization done right.*
+*AngularJS Localization done right. Kudos to the original author, Rahul Doshi, for this fantastic plugin.*
+*Due to a slowdown of activities on the main repo, we have forked it since we use it extensively in our angular projects.*
+*Feel free to submit PRs!*
 
-[![Build Status](https://travis-ci.org/doshprompt/angular-localization.svg?branch=master)](https://travis-ci.org/doshprompt/angular-localization)
+[![Build Status](https://travis-ci.org/doshprompt/angular-localization.svg?branch=master)](https://travis-ci.org/Spiria-Digital/angular-localization.svg?branch=master)
 [![Code Climate](https://codeclimate.com/github/doshprompt/angular-localization/badges/gpa.svg)](https://codeclimate.com/github/doshprompt/angular-localization)
 [![Test Coverage](https://codeclimate.com/github/doshprompt/angular-localization/badges/coverage.svg)](https://codeclimate.com/github/doshprompt/angular-localization/coverage)
 [![Bower version](https://badge.fury.io/bo/angular-localization.svg)](http://badge.fury.io/bo/angular-localization)

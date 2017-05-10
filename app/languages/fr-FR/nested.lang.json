@@ -1,0 +1,14 @@
+{
+	"message": "Ceci est une démonstration du nesting du fichier JSON utilisé pour les traductions.",
+    "form": {
+    	"name": "Nom",
+    	"address": "Adresse",
+    	"phone": "Téléphone",
+    	"placeholders": {
+    		"name": "Veuillez entrez votre prénom et nom",
+    		"address": "Veuillez entrez une adresse complète",
+    		"phone": "Veuillez entrez votre numéro de téléphone principal"
+    	}
+    },
+    "submit": "Envoyer"
+}

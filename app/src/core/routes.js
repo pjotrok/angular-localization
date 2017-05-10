@@ -5,8 +5,7 @@ angular.module('myApp.core.router')
 
             $routeProvider.
                 when('/home', {
-                    templateUrl: 'src/core/views/_home.html',
-                    // controller: 'HomeControl'
+                    templateUrl: 'src/core/views/_home.html'
                 }).
                 otherwise({
                     redirectTo: '/home'

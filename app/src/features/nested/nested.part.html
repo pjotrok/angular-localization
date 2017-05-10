@@ -1,0 +1,18 @@
+<div class="container">
+    <p>{{ 'nested.message' | i18n }}</p>
+    <form role="form">
+        <div class="form-group">
+            <label for="exampleInputName">{{ 'nested.form.name' | i18n }}</label>
+            <input type="text" class="form-control" id="exampleInputName" data-i18n-attr="{placeholder: 'nested.form.placeholders.name'}">
+          </div>
+          <div class="form-group">
+              <label for="exampleInputAddress">{{ 'nested.form.address' | i18n }}</label>
+              <input type="text" class="form-control" id="exampleInputAddress" data-i18n-attr="{placeholder: 'nested.form.placeholders.address'}">
+          </div>
+          <div class="form-group">
+              <label for="exampleInputPhone">{{ 'nested.form.phone' | i18n }}</label>
+              <input type="text" class="form-control" id="exampleInputPhone" data-i18n-attr="{placeholder: 'nested.form.placeholders.phone'}">
+          </div>
+          <button type="submit" class="btn btn-default">{{ 'nested.submit' | i18n }}</button>
+    </form>
+</div>

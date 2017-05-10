@@ -1,0 +1,14 @@
+{
+	"message": "This is a demonstration of the nested JSON translation file.",
+    "form": {
+    	"name": "Name",
+    	"address": "Address",
+    	"phone": "Phone number",
+    	"placeholders": {
+    		"name": "Please enter your first and last name",
+    		"address": "Please enter your full address",
+    		"phone": "Please enter your main phone number"
+    	}
+    },
+    "submit": "Submit"
+}

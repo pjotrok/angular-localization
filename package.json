@@ -1,10 +1,10 @@
 {
-  "name": "angular-localization-carnid-mod",
-  "version": "1.5.1",
+  "name": "angular-localization-spiria",
+  "version": "1.6.0",
   "description": "modded version of angularjs localization done right.",
   "main": [
-    "dist/angular-localization-carnid-mod.js",
-    "dist/angular-localization-carnid-mod.css"
+    "dist/angular-localization-spiria.js",
+    "dist/angular-localization-spiria.css"
   ],
   "scripts": {
     "postinstall": "bower install",
@@ -12,15 +12,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/carnid/angular-localization.git"
+    "url": "https://github.com/Spiria-Digital/angular-localization.git"
   },
   "keywords": [
-    "angularjs"
+    "angularjs",
+    "i18n",
+    "l10n",
+    "internationalization",
+    "localization",
+    "language"
   ],
   "author": "Rahul Doshi",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/carnid/angular-localization/issues"
+    "url": "https://github.com/Spiria-Digital/angular-localization/issues"
   },
   "homepage": "http://doshprompt.github.io/angular-localization",
   "devDependencies": {

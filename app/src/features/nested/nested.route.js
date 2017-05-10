@@ -4,8 +4,8 @@ angular.module('myApp.features.demo')
             'use strict';
 
             $routeProvider.
-                when('/demo', {
-                    templateUrl: 'src/features/demo/demo.part.html'
+                when('/nested', {
+                    templateUrl: 'src/features/nested/nested.part.html'
                 });
         }
     ]);

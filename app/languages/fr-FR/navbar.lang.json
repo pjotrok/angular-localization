@@ -1,4 +1,5 @@
 {
     "demo": "Démo",
-    "home": "Maison"
+    "home": "Maison",
+    "nested": "JSON \"nesté\""
 }
