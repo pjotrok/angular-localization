@@ -1,5 +1,5 @@
 /*!
- * angular-localization :: v1.5.1 :: 2016-05-05
+ * angular-localization-carnid-mod :: v1.5.1 :: 2016-11-10
  * web: http://doshprompt.github.io/angular-localization
  *
  * Copyright (c) 2016 | Rahul Doshi
@@ -21,15 +21,33 @@ angular.module('ngLocalize.InstalledLanguages', [])
     });
 angular.module('ngLocalize')
     .service('locale', ['$injector', '$http', '$q', '$log', '$rootScope', '$window', 'localeConf', 'localeEvents', 'localeSupported', 'localeFallbacks', function ($injector, $http, $q, $log, $rootScope, $window, localeConf, localeEvents, localeSupported, localeFallbacks) {
-        var TOKEN_REGEX = localeConf.validTokens || new RegExp('^[\\w\\.-]+\\.[\\w\\s\\.-]+\\w(:.*)?$'),
+        var TOKEN_REGEX = localeConf.validTokens || new RegExp('^([\\w-]+\\/)*([\\w-]+\\.)+([\\w\\s-])+\\w(:.*)?$'),
             $html = angular.element(document.body).parent(),
             currentLocale,
             deferrences,
             bundles,
-            cookieStore;
+            cookieStore,
+            sym = localeConf.allowNestedJson ? '/' : '.';
 
         if (localeConf.persistSelection && $injector.has('$cookieStore')) {
             cookieStore = $injector.get('$cookieStore');
+        }
+
+        function splitToken(tok){
+            var key, path;
+            if (localeConf.allowNestedJson){
+                var split = tok ? tok.split('.') : [];
+                key = split.length > 1 ? split.slice(1) : '';
+                path = split.length > 0 ? split[0].split(sym) : [];
+                path.push(split.length > 1 ? split[1] : '');
+            } else {
+                path = tok ? tok.split('/').join('.').split('.') : [];
+                key = path.length > 1 ? path[path.length - 1] : '';
+            }
+            return {
+                key: key,
+                path: path
+            };
         }
 
         function isToken(str) {
@@ -37,30 +55,23 @@ angular.module('ngLocalize')
         }
 
         function getPath(tok) {
-            var path = tok ? tok.split('.') : '',
+            var path = splitToken(tok).path,
                 result = '';
 
             if (path.length > 1) {
-                result = path.slice(0, -1).join('.');
+                result = path.slice(0, -1).join(sym);
             }
 
             return result;
         }
 
         function getKey(tok) {
-            var path = tok ? tok.split('.') : [],
-                result = '';
-
-            if (path.length) {
-                result = path[path.length - 1];
-            }
-
-            return result;
+            return splitToken(tok).key;
         }
 
         function getBundle(tok) {
             var result = null,
-                path = tok ? tok.split('.') : [],
+                path = splitToken(tok).path,
                 i;
 
             if (path.length > 1) {
@@ -99,7 +110,7 @@ angular.module('ngLocalize')
         }
 
         function loadBundle(token) {
-            var path = token ? token.split('.') : '',
+            var path = splitToken(token).path,
                 root = bundles,
                 parent,
                 locale = currentLocale,
@@ -177,7 +188,6 @@ angular.module('ngLocalize')
 
             path = path || localeConf.langFile;
             token = path + '._LOOKUP_';
-
             bundle = getBundle(token);
 
             if (!deferrences[path]) {
@@ -269,9 +279,24 @@ angular.module('ngLocalize')
                 bundle = getBundle(txt);
                 if (bundle && !bundle._loading) {
                     key = getKey(txt);
-
+                    if (localeConf.allowNestedJson){
+                        for (var i = 0; i < key.length - 1; i++) {
+                            if (bundle[key[i]]) {
+                                bundle = bundle[key[i]];
+                            } else {
+                                bundle = null;
+                                break;
+                            }
+                        }
+                        key =  key[key.length -1];
+                    }
                     if (bundle[key]) {
-                        result = applySubstitutions(bundle[key], subs);
+                        if (angular.isString(bundle[key])){
+                            result = applySubstitutions(bundle[key], subs);
+                        } else {
+                            $log.info('[localizationService] Key is not a string: ' + txt + '. Is it a nested object?');
+                            result = '%%KEY_NOT_STRING%%';
+                        }
                     } else {
                         $log.info('[localizationService] Key not found: ' + txt);
                         result = '%%KEY_NOT_FOUND%%';
@@ -525,7 +550,8 @@ angular.module('ngLocalize.Config', [])
         cookieName: 'COOKIE_LOCALE_LANG',
         observableAttrs: new RegExp('^data-(?!ng-|i18n)'),
         delimiter: '::',
-        validTokens: new RegExp('^[\\w\\.-]+\\.[\\w\\s\\.-]+\\w(:.*)?$')
+        validTokens: new RegExp('^([\\w-]+\\/)*([\\w-]+\\.)+([\\w\\s-])+\\w(:.*)?$'),
+        allowNestedJson: false
     });
 
 }(this.angular, this, this.document));
