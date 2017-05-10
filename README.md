@@ -4,17 +4,11 @@
 *Due to a slowdown of activities on the main repo, we have forked it since we use it extensively in our angular projects.*
 *Feel free to submit PRs!*
 
-[![Build Status](https://travis-ci.org/doshprompt/angular-localization.svg?branch=master)](https://travis-ci.org/Spiria-Digital/angular-localization.svg?branch=master)
-[![Code Climate](https://codeclimate.com/github/doshprompt/angular-localization/badges/gpa.svg)](https://codeclimate.com/github/doshprompt/angular-localization)
-[![Test Coverage](https://codeclimate.com/github/doshprompt/angular-localization/badges/coverage.svg)](https://codeclimate.com/github/doshprompt/angular-localization/coverage)
-[![Bower version](https://badge.fury.io/bo/angular-localization.svg)](http://badge.fury.io/bo/angular-localization)
-[![GitHub license](https://img.shields.io/github/license/doshprompt/angular-localization.svg)](https://github.com/doshprompt/angular-localization/blob/master/LICENSE)
-
-[![Dependency Status](https://david-dm.org/doshprompt/angular-localization.svg?theme=shields.io)](https://david-dm.org/doshpromot/angular-localization)
-[![devDependency Status](https://david-dm.org/doshprompt/angular-localization/dev-status.svg?theme=shields.io)](https://david-dm.org/angular-localization#info=devDependencies)
-[![Gitter chat](https://badges.gitter.im/doshprompt/angular-localization.png)](https://gitter.im/doshprompt/angular-localization)
-[![Stories in Ready](https://badge.waffle.io/doshprompt/angular-localization.png?label=ready&title=Ready)](https://waffle.io/doshprompt/angular-localization)
-[![Donate to help support angular-localization development](http://img.shields.io/gittip/doshprompt.svg)](https://www.gittip.com/doshprompt/)
+[![Build Status](https://travis-ci.org/Spiria-Digital/angular-localization.svg?branch=master)](https://travis-ci.org/Spiria-Digital/angular-localization.svg?branch=master)
+[![Code Climate](https://codeclimate.com/github/Spiria-Digital/angular-localization/badges/gpa.svg)](https://codeclimate.com/github/Spiria-Digital/angular-localization)
+[![Test Coverage](https://codeclimate.com/github/Spiria-Digital/angular-localization/badges/coverage.svg)](https://codeclimate.com/github/Spiria-Digital/angular-localization/coverage)
+[![Bower version](https://badge.fury.io/bo/angular-localization-spiria.svg)](http://badge.fury.io/bo/angular-localization)
+[![GitHub license](https://img.shields.io/github/license/Spiria-Digital/angular-localization-spiria.svg)](https://github.com/Spiria-Digital/angular-localization/blob/master/LICENSE)
 
 ___
 
@@ -43,6 +37,8 @@ ___
 
 A localization module for [AngularJS](http://angularjs.org/) complete with core service and accompanying filter, directives etc.
 
+It was first made by [Rahul Doshi](https://github.com/doshprompt). Due to the lack of recent activity in the main repo, we have forked this version to better maintain it.
+
 It is based on a number of angularjs localization modules already available out there on the web,
 and borrows heavily from the following list including but not limited to:
 
@@ -64,6 +60,7 @@ which was later updated to include performance improvements [seen here](http://c
 1. Parameters in the directive may be bound to `$scope` variables from the nearest parent controller.
 2. HTML element tag attributes can also be natively localized.
 3. Ability to configure a whole slew of things for more customizability to play nicely with your application.
+4. You can used nested json in your language files.
 
 ### Build Dependencies
 
@@ -95,15 +92,15 @@ Please refer to this [document][commit-message-format] for a detailed explanatio
 The easiest way to install the `ngLocalize` module is via [Bower](http://bower.io/):
 
 ```shell
-bower install angular-localization --save
+bower install angular-localization-spiria --save
 ```
 
 Two other options are available:
 
-- [Download the latest release](https://github.com/doshprompt/angular-localization/archive/master.zip).
-- Clone the repo: `git clone https://github.com/doshprompt/angular-localization.git`.
+- [Download the latest release](https://github.com/Spiria-Digital/angular-localization/archive/master.zip).
+- Clone the repo: `git clone https://github.com/Spiria-Digital/angular-localization.git`.
 
-You can then include `angular-localization` after its dependencies,
+You can then include `angular-localization-spiria` after its dependencies,
 [angular](https://github.com/angular/bower-angular) and
 [angular-cookies](https://github.com/angular/bower-angular-cookies):
 
@@ -111,7 +108,7 @@ You can then include `angular-localization` after its dependencies,
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
-<script src="bower_components/angular-localization/angular-localization.js"></script>
+<script src="bower_components/angular-localization-spiria/angular-localization-spiria.js"></script>
 ```
 
 ### Wiring It Up
@@ -473,6 +470,3 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
 ---
-
-[![Analytics](https://ga-beacon.appspot.com/UA-51468215-1/angular-localization/README.md)](https://github.com/igrigorik/ga-beacon)
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/doshprompt/angular-localization/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
